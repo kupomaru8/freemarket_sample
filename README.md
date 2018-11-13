@@ -21,4 +21,128 @@ Things you may want to cover:
 
 * Deployment instructions
 
+## userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|nickname|string|null: false, unique: true|
+|mail|string|null: false|
+|content|text||
+|avatar_image|string||
+|phone_number|integer|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
+
+### Association
+- has_many :items
+- has_many :orderings
+- has_many :credit_cards
+- has_one :address
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building name|string||
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## credit_cardテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card_number|integer|null: false|
+|expiration_month|integer|null: false|
+|expiration_year|integer|null: false|
+|security_code|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## itemテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|price|integer|null: false|
+|state|integer|null: false|
+|content|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+|subcategory_id|integer|null: false, foreign_key: true|
+|further_category_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :item_image
+- has_one :brand
+- has_one :category
+- has_one :subcategory
+- has_one :further_category
+- belongs_to :user
+
+## item_imageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image_url|string|null: false|
+|item_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+
+## brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :item
+
+## categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :item
+- has_many :subcategory
+
+## subcategoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|category_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :category
+- has_many :further_category
+
+## further_categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|further_category_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :subcategory
+
+## orderingテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :user
+
+
 * ...
