@@ -46,10 +46,10 @@ Things you may want to cover:
 |------|----|-------|
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
-|city|string|null: false|
-|address|string|null: false|
-|building name|string||
-|user_id|integer|null: false, foreign_key: true|
+|city_name|string|null: false|
+|house_number|string|null: false|
+|building_name|string||
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -61,7 +61,7 @@ Things you may want to cover:
 |expiration_month|integer|null: false|
 |expiration_year|integer|null: false|
 |security_code|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -75,9 +75,9 @@ Things you may want to cover:
 |content|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
-|subcategory_id|integer|null: false, foreign_key: true|
-|further_category_id|integer|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|subcategory_id|references|null: false, foreign_key: true|
+|further_category_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :item_image
@@ -91,7 +91,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image_url|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -117,7 +117,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|category_id|integer|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -128,7 +128,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|further_category_id|integer|null: false, foreign_key: true|
+|further_category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -137,8 +137,8 @@ Things you may want to cover:
 ## orderingテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 
 ### Association
