@@ -108,7 +108,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string|index: true|
+|parent_id|integer|index: true|
+|lft|integer|null: false, index: true|
+|rgt|integer|null: false, index: true|
+|depth|integer|null: false, default: 0|
+|children_count|integer|null: false, default: 0|
 
 ### Association
 - belongs_to :item
