@@ -73,8 +73,8 @@ Things you may want to cover:
 |price|integer|null: false|
 |state|integer|null: false|
 |content|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|brand_id|integer|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |subcategory_id|references|null: false, foreign_key: true|
 |further_category_id|references|null: false, foreign_key: true|
