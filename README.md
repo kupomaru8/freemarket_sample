@@ -108,31 +108,10 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string|index: true|
 
 ### Association
 - belongs_to :item
-- has_many :subcategory
-
-## subcategoryテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|category_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :category
-- has_many :further_category
-
-## further_categoryテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|further_category_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :subcategory
 
 ## orderingテーブル
 |Column|Type|Options|
