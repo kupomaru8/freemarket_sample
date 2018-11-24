@@ -1,0 +1,56 @@
+.pc-header {
+  position: relative;
+  z-index: 1001;
+  background-color: white;
+}
+
+.pc-header-inner{
+  width: 1020px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+}
+
+.clearfix:after{
+  content:"";
+  clear: both;
+  display: block;
+}
+
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+}
+
+.pc-header-nav {
+  display: block;
+  color: black;
+}
+
+.pc-header-nav li{
+  display: inline-block;
+  position: relative;
+}
+
+.pc-header-user-nav li {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.top-main-visual {
+  width: 1269px;
+  height: 390px;
+  background-color: #f8dce0;
+  background-image: url("/jp/assets/img/common/jp/top/main_bg_pc.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.back-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

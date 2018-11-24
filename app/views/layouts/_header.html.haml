@@ -1,0 +1,20 @@
+%header.pc-header.visible-pc
+  .pc-header-inner
+    .pc-header-top-box.clearfix
+      %h1.l-left
+        = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?392262853",width: "134",height:"36"),root_path
+      .l-right.pc-header-form キーワードから探す
+    .pc-header-nav-box.clearfix
+      %nav.l-left
+        %ul.pc-header-nav
+          %li
+            %h2.pc-header-nav-root カテゴリーから探す
+          %li
+            %h2.pc-header-nav-root ブランドから探す
+      .l-right
+        %ul.pc-header-user-nav
+          %li
+            = image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", alt: "", width:"32")
+            %div マイページ
+          %li お知らせ
+          %li やることリスト
